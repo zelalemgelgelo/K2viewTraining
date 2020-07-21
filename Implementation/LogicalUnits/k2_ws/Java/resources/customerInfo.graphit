@@ -1,0 +1,171 @@
+{
+  "name": "Root",
+  "serializerSettings": [
+    {
+      "set": "nice",
+      "value": "true"
+    }
+  ],
+  "children": [
+    {
+      "name": "Personal Info",
+      "type": "sql",
+      "code": "select customer_id,first_name,last_name from public_customer",
+      "children": [
+        {
+          "name": "Customer name",
+          "type": "string",
+          "code": "${first_name} ${last_name}"
+        },
+        {
+          "name": "Customer Id",
+          "type": "variable",
+          "code": "customer_id "
+        }
+      ]
+    },
+    {
+      "name": "Address Info",
+      "type": "sql",
+      "code": "select street_address_1,city,state,country,zip from public_address",
+      "children": [
+        {
+          "name": "address",
+          "type": "variable",
+          "code": "street_address_1"
+        },
+        {
+          "name": "City",
+          "type": "variable",
+          "code": "City"
+        },
+        {
+          "name": "State",
+          "type": "variable",
+          "code": "State"
+        },
+        {
+          "name": "country",
+          "type": "variable",
+          "code": "country"
+        },
+        {
+          "name": "zip",
+          "type": "variable",
+          "code": "zip"
+        }
+      ]
+    },
+    {
+      "name": "Contract info",
+      "type": "sql",
+      "code": "select count(*) as Total_contract from public_contract",
+      "children": [
+        {
+          "name": "Total # of contract",
+          "type": "variable",
+          "code": "Total_contract"
+        }
+      ]
+    },
+    {
+      "name": "contract condition",
+      "type": "condition",
+      "code": "if(Total_contract>0)\n  \n  checkval=true;\n\n  ",
+      "children": [
+        {
+          "name": "Contract Details",
+          "type": "sql",
+          "code": "select contract_id,contract_description ,from_date,to_date from public_contract",
+          "children": [
+            {
+              "name": "contract_id",
+              "type": "variable",
+              "code": "contract_id"
+            },
+            {
+              "name": "contract_description",
+              "type": "variable",
+              "code": "contract_description"
+            },
+            {
+              "name": "start_date",
+              "type": "variable",
+              "code": "start_date"
+            },
+            {
+              "name": "end_date",
+              "type": "variable",
+              "code": "end_date"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cases",
+      "type": "sql",
+      "code": "select count(*) as case_count from public_cases",
+      "children": [
+        {
+          "name": "Number of cases",
+          "type": "variable",
+          "code": "case_count"
+        }
+      ]
+    },
+    {
+      "name": "Open cases",
+      "type": "sql",
+      "code": "select count(*) as  open_cases  from public_cases where status='open'",
+      "children": [
+        {
+          "name": "open cases",
+          "type": "variable",
+          "code": "open_cases"
+        }
+      ]
+    },
+    {
+      "name": "case condition",
+      "type": "condition",
+      "code": "if(open_cases>0){\n  \n}\nelse{\n  \n}",
+      "children": [
+        {
+          "name": "Case Details",
+          "type": "sql",
+          "code": "select * from public_cases",
+          "children": [
+            {
+              "name": "case_id",
+              "type": "variable",
+              "code": "case_id"
+            },
+            {
+              "name": "case type",
+              "type": "variable",
+              "code": "case_type"
+            },
+            {
+              "name": "Status ",
+              "type": "variable",
+              "code": "Status "
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "params": [
+    {
+      "name": "c_id",
+      "dataType": "String",
+      "debugValue": "10"
+    },
+    {
+      "name": "check_val",
+      "dataType": "String",
+      "debugValue": "False"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "name": "ROOT",
+  "serializerSettings": [
+    {
+      "set": "nice",
+      "value": "true"
+    }
+  ],
+  "children": [
+    {
+      "name": "CUSTOMER_DATA",
+      "type": "sql",
+      "code": "select customer_id,ssn,first_name,last_name from public_Customer",
+      "children": [
+        {
+          "name": "CUSTOMER_ID",
+          "type": "variable",
+          "code": "CUSTOMER_ID"
+        },
+        {
+          "name": "SSN",
+          "type": "variable",
+          "code": "SSN"
+        },
+        {
+          "name": "FISRST_NAME",
+          "type": "variable",
+          "code": "FIRST_NAME"
+        },
+        {
+          "name": "LAST_NAME",
+          "type": "variable",
+          "code": "LAST_NAME"
+        }
+      ]
+    },
+    {
+      "name": "AVAILABLE_AMOUNT",
+      "type": "sql",
+      "code": "select sum(available_amount) as availableamount from balance ",
+      "children": [
+        {
+          "name": "availableamount",
+          "type": "variable",
+          "code": "availableamount"
+        },
+        {
+          "name": "customerstatus",
+          "type": "function",
+          "code": "if(availableamount>10000){\n   \"VIP customer\"\n   }else{\n     if(availableamount>1000 && availableamount<10000){\n        \"Gold customer\"\n        }\n     \n   }"
+        }
+      ]
+    }
+  ],
+  "params": [
+    {
+      "name": "i_id",
+      "dataType": "String",
+      "debugValue": "1234"
+    }
+  ]
+}

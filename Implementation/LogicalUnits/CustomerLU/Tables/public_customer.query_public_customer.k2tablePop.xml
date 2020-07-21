@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TablePopulationObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ID>query_public_customer</ID>
+  <PopulationObjectName>query_public_customer</PopulationObjectName>
+  <TableName>public_customer</TableName>
+  <RootItemID>query_query_public_customer</RootItemID>
+  <LazyDataUpdate syncMethod="None" performEvery="1.00:00:00">
+    <DecisionFunction>checkingSync</DecisionFunction>
+    <TruncateBeforeSync>false</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <SimpleObject>true</SimpleObject>
+  <IidFinderProp />
+  <InputArguments>
+    <Arg name="customer_id" id="queryCol_0" dataType="Integer" index="0" />
+  </InputArguments>
+  <ItemsList>
+    <Item xsi:type="DBQueryDataSave" id="query_query_public_customer" name="query_public_customer" nodeOrder="0" module="DBQuery" mapObjectModule="DBQuery" connName="CRM_DB">
+      <OutputsList>
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_0" name="customer_id" dataType="Integer" index="0" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_1" name="ssn" dataType="Text" index="1" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_2" name="first_name" dataType="Text" index="2" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_3" name="last_name" dataType="Text" index="3" />
+      </OutputsList>
+      <SQL><![CDATA[SELECT * FROM public.customer]]></SQL>
+    </Item>
+  </ItemsList>
+  <LinksList>
+    <Link partId="12" fromNodeOrder="0" fromItemID="query_query_public_customer" fromColID="queryCol_0" toItemID="tbl_public_customer" toColID="tblCol_5339dc0043244f0297c7b8a1c0bedc31" />
+    <Link partId="13" fromNodeOrder="0" fromItemID="query_query_public_customer" fromColID="queryCol_1" toItemID="tbl_public_customer" toColID="tblCol_ac048ee69e7f42d991d765e2aff32b7b" />
+    <Link partId="14" fromNodeOrder="0" fromItemID="query_query_public_customer" fromColID="queryCol_2" toItemID="tbl_public_customer" toColID="tblCol_2dc3f459322b48bcac96385e2d23c203" />
+    <Link partId="15" fromNodeOrder="0" fromItemID="query_query_public_customer" fromColID="queryCol_3" toItemID="tbl_public_customer" toColID="tblCol_d404cd0163fd4f3b811862321a447ced" />
+  </LinksList>
+  <ModeKeyColumnIDs />
+  <DiagramGraph>
+    <Graph name="public_customer.query_public_customer.k2tablePop.xml" lastPartID="75">
+      <TableNode partID="0" name="public_customer" pos="388 9.817716" width="253" />
+      <DBQueryNode partID="7" name="CRM_DB" pos="10 0.854171753" size="253 108.291656" isRoot="true">
+        <DBQuery>{"Name":"query_public_customer","ID":"query_query_public_customer","ConnName":"CRM_DB","SQL":"SELECT * FROM public.customer","ColumnsList":[{"ID":"queryCol_0","Name":"customer_id","DataType":"Integer","Index":0,"IsInputArgument":true},{"ID":"queryCol_1","Name":"ssn","DataType":"Text","Index":1,"IsInputArgument":false},{"ID":"queryCol_2","Name":"first_name","DataType":"Text","Index":2,"IsInputArgument":false},{"ID":"queryCol_3","Name":"last_name","DataType":"Text","Index":3,"IsInputArgument":false}]}</DBQuery>
+      </DBQueryNode>
+      <Link partID="12" from="0" to="1" pointsArr="263 36.89063 273 36.89063 378 40.85417 388 40.85417" fromNodePartID="7" fromNodeColumnName="customer_id" toNodePartID="0" toNodeColumnName="customer_id" />
+      <Link partID="13" from="2" to="3" pointsArr="263 48.9635429 273 48.9635429 378 52.9270859 388 52.9270859" fromNodePartID="7" fromNodeColumnName="ssn" toNodePartID="0" toNodeColumnName="ssn" />
+      <Link partID="14" from="4" to="5" pointsArr="263 61.0364571 273 61.0364571 378 65 388 65" fromNodePartID="7" fromNodeColumnName="first_name" toNodePartID="0" toNodeColumnName="first_name" />
+      <Link partID="15" from="6" to="7" pointsArr="263 73.109375 273 73.109375 378 77.07292 388 77.07292" fromNodePartID="7" fromNodeColumnName="last_name" toNodePartID="0" toNodeColumnName="last_name" />
+    </Graph>
+  </DiagramGraph>
+</TablePopulationObject>

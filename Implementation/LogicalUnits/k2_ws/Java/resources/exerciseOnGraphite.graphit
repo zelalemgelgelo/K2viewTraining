@@ -1,0 +1,91 @@
+{
+  "name": "Exercise",
+  "type": "sqlNonPrepared",
+  "code": "get CustomerLU.${customer_id}",
+  "serializerSettings": [
+    {
+      "set": "nice",
+      "value": "true"
+    }
+  ],
+  "children": [
+    {
+      "name": "CUSTOMER_DATA",
+      "type": "sql",
+      "code": "select customer_id,ssn,first_name,last_name from public_Customer",
+      "children": [
+        {
+          "name": "CUSTOMER_ID",
+          "type": "variable",
+          "code": "CUSTOMER_ID"
+        },
+        {
+          "name": "SSN",
+          "type": "variable",
+          "code": "SSN"
+        },
+        {
+          "name": "FISRST_NAME",
+          "type": "variable",
+          "code": "FIRST_NAME"
+        },
+        {
+          "name": "LAST_NAME",
+          "type": "variable",
+          "code": "LAST_NAME"
+        }
+      ]
+    },
+    {
+      "name": "CASE_DATA",
+      "type": "sql",
+      "code": "select * from public_case_note where case_id=${case_id}",
+      "children": [
+        {
+          "name": "NOTE_DATE",
+          "type": "variable",
+          "code": "NOTE_DATE"
+        },
+        {
+          "name": "NOTE_STATUS",
+          "type": "variable",
+          "code": "NOTE_TEXT"
+        }
+      ]
+    },
+    {
+      "name": "BALANCE ",
+      "type": "sql",
+      "code": "select SUM(balance) as dollarCustomerValue from invoice",
+      "children": [
+        {
+          "name": "BalValue",
+          "type": "variable",
+          "code": "dollarCustomerValue"
+        },
+        {
+          "name": "BalanceGBPEUR",
+          "type": "function",
+          "code": "if(Boolean(convGBP)){\n\"GBPValue::\" +dollarCustomerValue*0.79\n}\n   else{\n   \"EURValue::\" + dollarCustomerValue*0.89\n   }"
+        }
+      ]
+    }
+  ],
+  "params": [
+    {
+      "name": "customer_id",
+      "dataType": "String",
+      "debugValue": "1006"
+    },
+    {
+      "name": "case_id",
+      "dataType": "String",
+      "debugValue": ""
+    },
+    {
+      "name": "convGBP",
+      "dataType": "String",
+      "debugValue": "False"
+    }
+  ]
+}

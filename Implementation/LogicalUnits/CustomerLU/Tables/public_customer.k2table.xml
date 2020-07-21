@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>public_customer</Name>
+  <ID>tbl_public_customer</ID>
+  <EntityId>tblCol_5339dc0043244f0297c7b8a1c0bedc31</EntityId>
+  <Columns>
+    <Column name="customer_id" id="tblCol_5339dc0043244f0297c7b8a1c0bedc31" index="0" datatype="Integer" mandatory="true" />
+    <Column name="ssn" id="tblCol_ac048ee69e7f42d991d765e2aff32b7b" index="1" datatype="Text" />
+    <Column name="first_name" id="tblCol_2dc3f459322b48bcac96385e2d23c203" index="2" datatype="Text" />
+    <Column name="last_name" id="tblCol_d404cd0163fd4f3b811862321a447ced" index="3" datatype="Text" />
+  </Columns>
+  <IndexesList />
+  <EnrichmentList>
+    <Enrichment>
+      <Name>enrichmentFunctionWebService</Name>
+      <Type>Function</Type>
+      <TableName>public_customer</TableName>
+    </Enrichment>
+  </EnrichmentList>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <DecisionFunction>checkingSync</DecisionFunction>
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+</TableObject>

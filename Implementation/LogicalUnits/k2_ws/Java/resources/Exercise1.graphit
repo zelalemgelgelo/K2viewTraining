@@ -1,0 +1,64 @@
+{
+  "name": "root",
+  "serializerSettings": [
+    {
+      "set": "nice",
+      "value": "true"
+    }
+  ],
+  "children": [
+    {
+      "name": "get",
+      "type": "sqlNonPrepared",
+      "code": "get CustomerLU.${i_id}",
+      "children": [
+        {
+          "name": "CUSTOMER DATA ",
+          "type": "sql",
+          "code": "select * from public_customer where customer_id=${i_id}",
+          "children": [
+            {
+              "name": "message",
+              "type": "string",
+              "code": "customer ${i_id} is not BRONZE on any account"
+            },
+            {
+              "name": "FIRST_NAME",
+              "type": "variable",
+              "code": "FIRST_NAME"
+            },
+            {
+              "name": "LAST_NAME",
+              "type": "variable",
+              "code": "LAST_NAME"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LINE DATA ",
+      "type": "sql",
+      "code": "select * from subscriber",
+      "children": [
+        {
+          "name": "SIM ",
+          "type": "variable",
+          "code": "SIM "
+        },
+        {
+          "name": "VIP_STATUS",
+          "type": "variable",
+          "code": "VIP_STATUS"
+        }
+      ]
+    }
+  ],
+  "params": [
+    {
+      "name": "i_id",
+      "dataType": "String",
+      "debugValue": "2000"
+    }
+  ]
+}

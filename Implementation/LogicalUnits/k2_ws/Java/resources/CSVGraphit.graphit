@@ -1,0 +1,72 @@
+{
+  "name": "root",
+  "children": [
+    {
+      "name": "SUBSCRIBER_DATA",
+      "type": "sql",
+      "code": "select s.msisdn,s.subscriber_id,i.invoice_id,\ni.status,i.issued_date,i.balance\nfrom subscriber s Inner join invoice i on\ns.subscriber_id=i.subscriber_id \nwhere i.subscriber_id in (2,3)",
+      "serializerSettings": [
+        {
+          "set": "nice",
+          "value": "true"
+        },
+        {
+          "set": "csvHeader",
+          "value": "false"
+        }
+      ],
+      "keys": [
+        "SUBSCRIBER_ID"
+      ],
+      "entryTag": "subscriber",
+      "children": [
+        {
+          "name": "SUBSCRIBER_ID",
+          "type": "variable",
+          "code": "SUBSCRIBER_ID"
+        },
+        {
+          "name": "MSISDN",
+          "type": "variable",
+          "code": "MSISDN"
+        }
+      ]
+    },
+    {
+      "name": "INVOICES",
+      "entryTag": "invoice",
+      "keys": [
+        "invoice_id"
+      ],
+      "children": [
+        {
+          "name": "INVOICE_ID",
+          "type": "variable",
+          "code": "INVOICE_ID"
+        },
+        {
+          "name": "STATUS",
+          "type": "variable",
+          "code": "STATUS"
+        },
+        {
+          "name": "ISSUED_DATE",
+          "type": "variable",
+          "code": "ISSUED_DATE"
+        },
+        {
+          "name": "BALANCE",
+          "type": "variable",
+          "code": "BALANCE"
+        }
+      ]
+    }
+  ],
+  "params": [
+    {
+      "name": "subscriber_id",
+      "dataType": "String",
+      "debugValue": "2"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>CASES_WEBSERVICE</Name>
+  <ID>tbl_CASES_WEBSERVICE</ID>
+  <Columns>
+    <Column name="RESULT" id="tblCol_5b2a6208265e47279f1c55dd9355afae" index="0" datatype="text" />
+    <Column name="ID" id="tblCol_43136c6630d446809632ed1538020a2e" index="1" datatype="integer" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="tblCol_43136c6630d446809632ed1538020a2e" />
+  </IndexesList>
+  <EnrichmentList>
+    <Enrichment>
+      <Name>enrichmentFunctionWebService</Name>
+      <Type>Function</Type>
+      <TableName>CASES_WEBSERVICE</TableName>
+    </Enrichment>
+  </EnrichmentList>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+</TableObject>

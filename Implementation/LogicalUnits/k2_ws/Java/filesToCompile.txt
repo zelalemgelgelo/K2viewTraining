@@ -1,0 +1,3 @@
+"C:/Users/ZelalemZergawGelgelo/Documents/K2View Fabric Studio/Projects/TrainingProject/Implementation/SharedObjects/Java/src/com/k2view/cdbms/usercode/common/SharedGlobals.java"
+"C:/Users/ZelalemZergawGelgelo/Documents/K2View Fabric Studio/Projects/TrainingProject/Implementation/SharedObjects/Java/src/com/k2view/cdbms/usercode/common/SharedLogic.java"
+"C:/Users/ZelalemZergawGelgelo/Documents/K2View Fabric Studio/Projects/TrainingProject/Implementation/LogicalUnits/k2_ws/Java/src/com/k2view/cdbms/usercode/lu/k2_ws/Training/Logic.java"

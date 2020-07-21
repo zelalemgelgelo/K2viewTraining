@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TablePopulationObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ID>query_public_contract</ID>
+  <PopulationObjectName>query_public_contract</PopulationObjectName>
+  <TableName>public_contract</TableName>
+  <RootItemID>query_query_public_contract</RootItemID>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>false</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <SimpleObject>true</SimpleObject>
+  <IidFinderProp />
+  <InputArguments>
+    <Arg name="customer_id" id="queryCol_0" dataType="Integer" index="0" />
+    <Arg name="contract_id" id="queryCol_1" dataType="Integer" index="1" />
+    <Arg name="contract_ref_id" id="queryCol_2" dataType="Integer" index="2" />
+    <Arg name="associated_line" id="queryCol_3" dataType="Text" index="3" />
+    <Arg name="contract_description" id="queryCol_4" dataType="Text" index="4" />
+    <Arg name="from_date" id="queryCol_5" dataType="Text" index="5" />
+    <Arg name="to_date" id="queryCol_6" dataType="Text" index="6" />
+    <Arg name="associated_line_fmt" id="queryCol_7" dataType="Text" index="7" />
+  </InputArguments>
+  <ItemsList>
+    <Item xsi:type="DBQueryDataSave" id="query_query_public_contract" name="query_public_contract" nodeOrder="0" module="DBQuery" mapObjectModule="DBQuery" connName="CRM_DB">
+      <OutputsList>
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_0" name="customer_id" dataType="Integer" index="0" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_1" name="contract_id" dataType="Integer" index="1" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_2" name="contract_ref_id" dataType="Integer" index="2" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_3" name="associated_line" dataType="Text" index="3" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_4" name="contract_description" dataType="Text" index="4" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_5" name="from_date" dataType="Text" index="5" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_6" name="to_date" dataType="Text" index="6" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_7" name="associated_line_fmt" dataType="Text" index="7" />
+      </OutputsList>
+      <SQL><![CDATA[SELECT * FROM public.contract]]></SQL>
+    </Item>
+  </ItemsList>
+  <LinksList>
+    <Link partId="20" fromNodeOrder="0" fromItemID="query_query_public_contract" fromColID="queryCol_0" toItemID="tbl_public_contract" toColID="tblCol_5a9a22e8d96b4dc8a4144dbd219f1337" />
+    <Link partId="21" fromNodeOrder="0" fromItemID="query_query_public_contract" fromColID="queryCol_1" toItemID="tbl_public_contract" toColID="tblCol_6ab2ab22f2534cf09e0c16832c3f51fd" />
+    <Link partId="22" fromNodeOrder="0" fromItemID="query_query_public_contract" fromColID="queryCol_2" toItemID="tbl_public_contract" toColID="tblCol_cda581295c07459fb50a95feddb342d8" />
+    <Link partId="23" fromNodeOrder="0" fromItemID="query_query_public_contract" fromColID="queryCol_3" toItemID="tbl_public_contract" toColID="tblCol_4fcbb0545b994709bad5e2322b19a730" />
+    <Link partId="24" fromNodeOrder="0" fromItemID="query_query_public_contract" fromColID="queryCol_4" toItemID="tbl_public_contract" toColID="tblCol_e2c13144e7a74ae79b409dee72fd16c1" />
+    <Link partId="25" fromNodeOrder="0" fromItemID="query_query_public_contract" fromColID="queryCol_5" toItemID="tbl_public_contract" toColID="tblCol_3e372967e96043c5b0f86bf163793210" />
+    <Link partId="26" fromNodeOrder="0" fromItemID="query_query_public_contract" fromColID="queryCol_6" toItemID="tbl_public_contract" toColID="tblCol_d910c22933f543bb885bdad5dec83fb8" />
+    <Link partId="27" fromNodeOrder="0" fromItemID="query_query_public_contract" fromColID="queryCol_7" toItemID="tbl_public_contract" toColID="tblCol_55e52bec7aaf4421b89f715410c6bba9" />
+  </LinksList>
+  <ModeKeyColumnIDs />
+  <DiagramGraph>
+    <Graph name="public_contract.query_public_contract.k2tablePop.xml" lastPartID="117">
+      <TableNode partID="0" name="public_contract" pos="645 32.67189" width="253" />
+      <DBQueryNode partID="11" name="CRM_DB" pos="10 0.7083435" size="253 156.583313" isRoot="true">
+        <DBQuery>{"Name":"query_public_contract","ID":"query_query_public_contract","ConnName":"CRM_DB","SQL":"SELECT * FROM public.contract","ColumnsList":[{"ID":"queryCol_0","Name":"customer_id","DataType":"Integer","Index":0,"IsInputArgument":true},{"ID":"queryCol_1","Name":"contract_id","DataType":"Integer","Index":1,"IsInputArgument":true},{"ID":"queryCol_2","Name":"contract_ref_id","DataType":"Integer","Index":2,"IsInputArgument":true},{"ID":"queryCol_3","Name":"associated_line","DataType":"Text","Index":3,"IsInputArgument":true},{"ID":"queryCol_4","Name":"contract_description","DataType":"Text","Index":4,"IsInputArgument":true},{"ID":"queryCol_5","Name":"from_date","DataType":"Text","Index":5,"IsInputArgument":true},{"ID":"queryCol_6","Name":"to_date","DataType":"Text","Index":6,"IsInputArgument":true},{"ID":"queryCol_7","Name":"associated_line_fmt","DataType":"Text","Index":7,"IsInputArgument":true}]}</DBQuery>
+      </DBQueryNode>
+      <Link partID="20" from="0" to="1" pointsArr="263 36.7447968 273 36.7447968 635 63.7083435 645 63.7083435" fromNodePartID="11" fromNodeColumnName="customer_id" toNodePartID="0" toNodeColumnName="customer_id" />
+      <Link partID="21" from="2" to="3" pointsArr="263 48.81771 273 48.81771 635 75.78126 645 75.78126" fromNodePartID="11" fromNodeColumnName="contract_id" toNodePartID="0" toNodeColumnName="contract_id" />
+      <Link partID="22" from="4" to="5" pointsArr="263 60.890625 273 60.890625 635 87.85417 645 87.85417" fromNodePartID="11" fromNodeColumnName="contract_ref_id" toNodePartID="0" toNodeColumnName="contract_ref_id" />
+      <Link partID="23" from="6" to="7" pointsArr="263 72.96355 273 72.96355 635 99.92709 645 99.92709" fromNodePartID="11" fromNodeColumnName="associated_line" toNodePartID="0" toNodeColumnName="associated_line" />
+      <Link partID="24" from="8" to="9" pointsArr="263 85.03645 273 85.03645 635 112 645 112" fromNodePartID="11" fromNodeColumnName="contract_description" toNodePartID="0" toNodeColumnName="contract_description" />
+      <Link partID="25" from="10" to="11" pointsArr="263 97.109375 273 97.109375 635 124.072922 645 124.072922" fromNodePartID="11" fromNodeColumnName="from_date" toNodePartID="0" toNodeColumnName="from_date" />
+      <Link partID="26" from="12" to="13" pointsArr="263 109.1823 273 109.1823 635 136.145844 645 136.145844" fromNodePartID="11" fromNodeColumnName="to_date" toNodePartID="0" toNodeColumnName="to_date" />
+      <Link partID="27" from="14" to="15" pointsArr="263 121.255219 273 121.255219 635 148.218765 645 148.218765" fromNodePartID="11" fromNodeColumnName="associated_line_fmt" toNodePartID="0" toNodeColumnName="associated_line_fmt" />
+    </Graph>
+  </DiagramGraph>
+</TablePopulationObject>

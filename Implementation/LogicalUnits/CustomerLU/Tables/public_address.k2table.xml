@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>public_address</Name>
+  <ID>tbl_public_address</ID>
+  <Columns>
+    <Column name="customer_id" id="tblCol_86fe65be9bb3497e86026520bef56ce4" index="0" datatype="Integer" mandatory="true" />
+    <Column name="address_id" id="tblCol_bbc4fa52bb73486e8d5766ee1e43b93f" index="1" datatype="Integer" mandatory="true" />
+    <Column name="street_address_1" id="tblCol_ae34525831e64511bc0afc916689d6a8" index="2" datatype="Text" />
+    <Column name="street_address_2" id="tblCol_3ca7b9eda4f644babe2c8fb51bbf8d3f" index="3" datatype="Text" />
+    <Column name="city" id="tblCol_969f58be6cb6476c9725b7959de0d530" index="4" datatype="Text" />
+    <Column name="zip" id="tblCol_c38e3c5d467b437badf00ae98fdb50c6" index="5" datatype="Text" />
+    <Column name="state" id="tblCol_4a6e81cefffd4ae7bc14e5b9df1cca05" index="6" datatype="Text" />
+    <Column name="country" id="tblCol_29f3e6fdc5be488b8f5e2d52eb29224d" index="7" datatype="Text" />
+    <Column name="customer_name" id="tblCol_203ace839d0b43d7a8f921bb2bc70686" index="8" datatype="text" />
+    <Column name="lat_long" id="tblCol_7cff4dc9a4fc40f8bdd7ca324512069b" index="9" datatype="text" />
+    <Column name="city_id" id="tblCol_8d5038be904e436882ee3c9de50b3306" index="10" datatype="text" />
+  </Columns>
+  <IndexesList />
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+</TableObject>

@@ -1,0 +1,72 @@
+{
+  "name": "root",
+  "serializerSettings": [
+    {
+      "set": "nice",
+      "value": "true"
+    }
+  ],
+  "children": [
+    {
+      "name": "get",
+      "type": "sqlNonPrepared",
+      "code": "get CustomerLU.${i_id}"
+    },
+    {
+      "name": "MSG",
+      "type": "string",
+      "code": "Customer is still BRONZE in at least one of his contracts "
+    },
+    {
+      "name": "Customer Data",
+      "type": "sql",
+      "code": "select customer_id,ssn,first_name,last_name from public_customer where customer_id=${i_id}",
+      "children": [
+        {
+          "name": "customer_id",
+          "type": "variable",
+          "code": "customer_id"
+        },
+        {
+          "name": "ssn",
+          "type": "variable",
+          "code": "ssn"
+        },
+        {
+          "name": "first_name",
+          "type": "variable",
+          "code": "first_name"
+        },
+        {
+          "name": "last_name",
+          "type": "variable",
+          "code": "last_name"
+        }
+      ]
+    },
+    {
+      "name": "Line Data",
+      "type": "sql",
+      "code": "select sim,vip_status from subscriber where vip_status =\"Bronze\"",
+      "children": [
+        {
+          "name": "sim",
+          "type": "variable",
+          "code": "sim"
+        },
+        {
+          "name": "vip_status",
+          "type": "variable",
+          "code": "vip_status"
+        }
+      ]
+    }
+  ],
+  "params": [
+    {
+      "name": "i_id",
+      "dataType": "String",
+      "debugValue": "1000"
+    }
+  ]
+}

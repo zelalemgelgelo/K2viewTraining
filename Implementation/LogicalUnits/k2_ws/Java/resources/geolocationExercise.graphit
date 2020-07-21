@@ -1,0 +1,72 @@
+{
+  "name": "Root",
+  "serializerSettings": [
+    {
+      "set": "nice",
+      "value": "true"
+    }
+  ],
+  "children": [
+    {
+      "name": "Customer Data",
+      "type": "sql",
+      "code": "select customer_name,city,city_id,lat_long from public_address",
+      "serializerSettings": [
+        {
+          "set": "nice",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "name": "customer full name ",
+      "type": "variable",
+      "code": "customer_name",
+      "serializerSettings": [
+        {
+          "set": "nice",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "name": "Customer City",
+      "type": "variable",
+      "code": "City",
+      "serializerSettings": [
+        {
+          "set": "nice",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "name": "city international Id",
+      "type": "variable",
+      "code": "cityId",
+      "serializerSettings": [
+        {
+          "set": "nice",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "name": "LATLONG",
+      "type": "variable",
+      "code": "LAT_LONG"
+    },
+    {
+      "name": "Map Link",
+      "type": "function",
+      "code": "\"https://www.google.com/maps/search/?api=1&query=\"+LAT_LONG.split('::')[0]+\",\"+LAT_LONG.split('::')[1]"
+    }
+  ],
+  "params": [
+    {
+      "name": "customer_id",
+      "dataType": "String",
+      "debugValue": "1000"
+    }
+  ]
+}

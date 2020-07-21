@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>subscriber</Name>
+  <ID>tbl_subscriber</ID>
+  <Columns>
+    <Column name="subscriber_id" id="tblCol_b85398507dba47f28672a24f72ba3a94" index="0" datatype="Integer" mandatory="true" />
+    <Column name="msisdn" id="tblCol_1abecd2a52cc4a6da2cc6f85149352fd" index="1" datatype="Text" />
+    <Column name="imsi" id="tblCol_02c5367074d5486c81ead319d9c74c78" index="2" datatype="Text" />
+    <Column name="sim" id="tblCol_31bece31c4764ca8a2e94bbfd03bd15a" index="3" datatype="Text" />
+    <Column name="first_name" id="tblCol_b173c8408c6a4c4c878060403eb9f52e" index="4" datatype="Text" />
+    <Column name="last_name" id="tblCol_69c94149fd8549ff9adb46841d40eeb0" index="5" datatype="Text" />
+    <Column name="subscriber_type" id="tblCol_900f7b1046314a269fe7a50a5ef1720f" index="6" datatype="Text" />
+    <Column name="vip_status" id="tblCol_781d19ed487049adb49fe3b812fc29c6" index="7" datatype="Text" />
+  </Columns>
+  <IndexesList />
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+</TableObject>

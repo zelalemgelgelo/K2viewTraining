@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DBConn xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DBConnCassandra" name="dbCassandra" type="Cassandra" version="6.1.3.1">
+  <Active>true</Active>
+  <DataSource>localhost</DataSource>
+  <PortNum>9042</PortNum>
+  <UserId>cassandra</UserId>
+  <Password>yI530q1NxGtOrjBnYoqqf63YG6Qq+OPW5S7t6GK5afA=:vRTVgBOdXgEgzCnv9eqWoxJ+7meBJWtjgk9OaRn2H4Q=</Password>
+  <ConnectionStringClient>Contact Points='localhost';Port=9042;Default Keyspace='';Username='cassandra';Password='[PASSWORD]';</ConnectionStringClient>
+  <ConnectionStringServerSide>jdbc:cassandra://localhost:9042?consistency=QUORUM</ConnectionStringServerSide>
+  <MinConnectionsNumber>0</MinConnectionsNumber>
+  <MaxConnectionsNumber>60</MaxConnectionsNumber>
+  <UseSelectAsteriskInAutoCreatedQueries>true</UseSelectAsteriskInAutoCreatedQueries>
+  <AutomaticMetadataLoading>false</AutomaticMetadataLoading>
+  <CommandList />
+</DBConn>

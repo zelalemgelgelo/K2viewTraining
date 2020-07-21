@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>offer</Name>
+  <ID>tbl_offer</ID>
+  <Columns>
+    <Column name="subscriber_id" id="tblCol_72f076fb6f2b44fb80ff06f75a1a4c10" index="0" datatype="Integer" />
+    <Column name="offer_id" id="tblCol_c5612901d13647f0ae57508d4e0a3c2c" index="1" datatype="Integer" />
+    <Column name="offer_ref_id" id="tblCol_871879faf73b491db7046adda10b91af" index="2" datatype="Integer" />
+    <Column name="offer_description" id="tblCol_f7c7cd814c60498eb8043f200750fa2f" index="3" datatype="Text" />
+    <Column name="from_date" id="tblCol_6eb1dc797a9141fdbdd0daa6f4530cac" index="4" datatype="Text" />
+    <Column name="to_date" id="tblCol_f2494f595f2c49859746574657e4e521" index="5" datatype="Text" />
+  </Columns>
+  <IndexesList />
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+</TableObject>
