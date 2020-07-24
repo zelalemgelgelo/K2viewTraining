@@ -128,7 +128,6 @@ public class Logic extends WebServiceUserCode {
 		fabric().execute("get CustomerLU.?",c_id);
 		//fabric().execute("set sync on");
 		return graphit("customerInfo.graphit");
-		log.info();
 	}
 
 

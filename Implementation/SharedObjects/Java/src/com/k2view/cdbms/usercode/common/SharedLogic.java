@@ -62,6 +62,29 @@ public class SharedLogic {
 	}
 
 
+	@category("String")
+	@out(name = "city", type = String.class, desc = "")
+	@out(name = "lat", type = String.class, desc = "")
+	@out(name = "long", type = String.class, desc = "")
+	@out(name = "state", type = String.class, desc = "")
+	@out(name = "pop", type = String.class, desc = "")
+	@out(name = "intid", type = String.class, desc = "")
+	public static Object stringsplitfunction(Map<String,String> input) throws Exception {
+		return new Object[]{
+				input.get("0"),
+				input.get("1"),
+				input.get("2"),
+				input.get("3"),
+				input.get("4"),
+				input.get("5")
+		};
+		
+					
+	}
+
+
+
+
 
 	
 	

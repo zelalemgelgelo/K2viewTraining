@@ -15,6 +15,7 @@
     <Table>balance</Table>
     <Table>CASES_WEBSERVICE</Table>
     <Table>invoice</Table>
+    <Table>new_parser_zel</Table>
     <Table>public_activity</Table>
     <Table>public_address</Table>
     <Table>public_case_note</Table>
@@ -32,6 +33,11 @@
     <TableProperties name="invoice">
       <Populations>
         <Population id="query_public_invoice" name="query_public_invoice" order="4" disabled="false" enrichment="false" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="new_parser_zel">
+      <Populations>
+        <Population id="query_k2view_customerlu_trainingproject_new_parser_zel" name="query_k2view_customerlu_trainingproject_new_parser_zel" order="3" disabled="false" enrichment="false" />
       </Populations>
     </TableProperties>
     <TableProperties name="public_activity">
@@ -110,6 +116,10 @@
       <From tableType="TableObject" table="subscriber" column="subscriber_id" columnId="tblCol_b85398507dba47f28672a24f72ba3a94" />
       <To tableType="TableObject" table="invoice" populationObjectName="query_public_invoice" column="subscriber_id" columnId="queryCol_0" />
     </Relation>
+    <Relation>
+      <From tableType="TableObject" table="public_address" column="city" columnId="tblCol_969f58be6cb6476c9725b7959de0d530" />
+      <To tableType="TableObject" table="new_parser_zel" populationObjectName="query_k2view_customerlu_trainingproject_new_parser_zel" column="city" columnId="queryCol_0" />
+    </Relation>
   </DatabaseRelations>
   <PreVCsSqlScript />
   <PostVCsSqlScript />
@@ -124,9 +134,10 @@
       <Node name="public_address" pos="313 214" size="257 136" listGroupSize="250 100" viewType="Table" />
       <Node name="public_contract" pos="313 414" size="257 136" listGroupSize="250 100" viewType="Table" />
       <Node name="subscriber" pos="615 489" size="257 136" listGroupSize="250 100" viewType="Table" />
-      <Node name="balance" pos="917 439" size="257 136" listGroupSize="250 100" viewType="Table" />
-      <Node name="invoice" pos="917 639" size="257 136" listGroupSize="250 100" viewType="Table" />
-      <Node name="CASES_WEBSERVICE" pos="615 305" size="257 120" listGroupSize="250 100" viewType="Table" />
+      <Node name="balance" pos="917 389" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="invoice" pos="917 589" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="CASES_WEBSERVICE" pos="917 780" size="257 120" listGroupSize="250 100" viewType="Table" />
+      <Node name="new_parser_zel" pos="615 289" size="257 136" listGroupSize="250 100" viewType="Table" />
     </Graph>
   </DiagramGraph>
 </VirtualDB>

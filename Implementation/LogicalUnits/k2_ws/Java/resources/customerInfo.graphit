@@ -65,38 +65,38 @@
           "name": "Total # of contract",
           "type": "variable",
           "code": "Total_contract"
-        }
-      ]
-    },
-    {
-      "name": "contract condition",
-      "type": "condition",
-      "code": "if(Total_contract>0)\n  \n  checkval=true;\n\n  ",
-      "children": [
+        },
         {
-          "name": "Contract Details",
-          "type": "sql",
-          "code": "select contract_id,contract_description ,from_date,to_date from public_contract",
+          "name": "contract condition",
+          "type": "condition",
+          "code": "Total_contract>0",
           "children": [
             {
-              "name": "contract_id",
-              "type": "variable",
-              "code": "contract_id"
-            },
-            {
-              "name": "contract_description",
-              "type": "variable",
-              "code": "contract_description"
-            },
-            {
-              "name": "start_date",
-              "type": "variable",
-              "code": "start_date"
-            },
-            {
-              "name": "end_date",
-              "type": "variable",
-              "code": "end_date"
+              "name": "Contract Details",
+              "type": "sql",
+              "code": "select contract_id,contract_description ,from_date,to_date from public_contract",
+              "children": [
+                {
+                  "name": "contract_id",
+                  "type": "variable",
+                  "code": "contract_id"
+                },
+                {
+                  "name": "contract_description",
+                  "type": "variable",
+                  "code": "contract_description"
+                },
+                {
+                  "name": "start_date",
+                  "type": "variable",
+                  "code": "start_date"
+                },
+                {
+                  "name": "end_date",
+                  "type": "variable",
+                  "code": "end_date"
+                }
+              ]
             }
           ]
         }
@@ -123,33 +123,33 @@
           "name": "open cases",
           "type": "variable",
           "code": "open_cases"
-        }
-      ]
-    },
-    {
-      "name": "case condition",
-      "type": "condition",
-      "code": "if(open_cases>0){\n  \n}\nelse{\n  \n}",
-      "children": [
+        },
         {
-          "name": "Case Details",
-          "type": "sql",
-          "code": "select * from public_cases",
+          "name": "Open_cases",
+          "type": "condition",
+          "code": "open_cases>0",
           "children": [
             {
-              "name": "case_id",
-              "type": "variable",
-              "code": "case_id"
-            },
-            {
-              "name": "case type",
-              "type": "variable",
-              "code": "case_type"
-            },
-            {
-              "name": "Status ",
-              "type": "variable",
-              "code": "Status "
+              "name": "Case Details",
+              "type": "sql",
+              "code": "select * from public_cases",
+              "children": [
+                {
+                  "name": "case_id",
+                  "type": "variable",
+                  "code": "case_id"
+                },
+                {
+                  "name": "case type",
+                  "type": "variable",
+                  "code": "case_type"
+                },
+                {
+                  "name": "Status ",
+                  "type": "variable",
+                  "code": "Status "
+                }
+              ]
             }
           ]
         }
@@ -160,12 +160,7 @@
     {
       "name": "c_id",
       "dataType": "String",
-      "debugValue": "10"
-    },
-    {
-      "name": "check_val",
-      "dataType": "String",
-      "debugValue": "False"
+      "debugValue": "8"
     }
   ]
 }

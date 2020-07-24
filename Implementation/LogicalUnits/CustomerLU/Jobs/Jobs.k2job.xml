@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <JobsGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>Jobs</Name>
-  <Jobs />
+  <Jobs>
+    <Job methodName="job_function" jobName="job_function" active="true">
+      <ScheduleType>TimeInterval</ScheduleType>
+      <ExecuteEvery>00:00:05</ExecuteEvery>
+      <InputParams />
+    </Job>
+  </Jobs>
 </JobsGroup>

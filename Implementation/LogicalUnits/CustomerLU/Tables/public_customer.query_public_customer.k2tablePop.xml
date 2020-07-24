@@ -32,7 +32,7 @@
   </LinksList>
   <ModeKeyColumnIDs />
   <DiagramGraph>
-    <Graph name="public_customer.query_public_customer.k2tablePop.xml" lastPartID="75">
+    <Graph name="public_customer.query_public_customer.k2tablePop.xml" lastPartID="85">
       <TableNode partID="0" name="public_customer" pos="388 9.817716" width="253" />
       <DBQueryNode partID="7" name="CRM_DB" pos="10 0.854171753" size="253 108.291656" isRoot="true">
         <DBQuery>{"Name":"query_public_customer","ID":"query_query_public_customer","ConnName":"CRM_DB","SQL":"SELECT * FROM public.customer","ColumnsList":[{"ID":"queryCol_0","Name":"customer_id","DataType":"Integer","Index":0,"IsInputArgument":true},{"ID":"queryCol_1","Name":"ssn","DataType":"Text","Index":1,"IsInputArgument":false},{"ID":"queryCol_2","Name":"first_name","DataType":"Text","Index":2,"IsInputArgument":false},{"ID":"queryCol_3","Name":"last_name","DataType":"Text","Index":3,"IsInputArgument":false}]}</DBQuery>

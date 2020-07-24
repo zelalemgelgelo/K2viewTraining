@@ -37,7 +37,7 @@
   </LinksList>
   <ModeKeyColumnIDs />
   <DiagramGraph>
-    <Graph name="public_cases.query_public_cases.k2tablePop.xml" lastPartID="54">
+    <Graph name="public_cases.query_public_cases.k2tablePop.xml" lastPartID="66">
       <TableNode partID="0" name="public_cases" pos="383 5.781254" width="253" />
       <DBQueryNode partID="8" name="CRM_DB" pos="10 0.8177109" size="253 120.364578" isRoot="true">
         <DBQuery>{"Name":"query_public_cases","ID":"query_query_public_cases","ConnName":"CRM_DB","SQL":"SELECT * FROM public.cases","ColumnsList":[{"ID":"queryCol_0","Name":"activity_id","DataType":"Integer","Index":0,"IsInputArgument":true},{"ID":"queryCol_1","Name":"case_id","DataType":"Integer","Index":1,"IsInputArgument":true},{"ID":"queryCol_2","Name":"case_date","DataType":"Text","Index":2,"IsInputArgument":true},{"ID":"queryCol_3","Name":"case_type","DataType":"Text","Index":3,"IsInputArgument":true},{"ID":"queryCol_4","Name":"status","DataType":"Text","Index":4,"IsInputArgument":true}]}</DBQuery>
