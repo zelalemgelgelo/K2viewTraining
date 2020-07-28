@@ -36,10 +36,10 @@ public class Logic extends WebServiceUserCode {
 				"from PUBLIC_CUSTOMER cust, PUBLIC_CONTRACT cont, SUBSCRIBER sub where cont.CONTRACT_ID=sub.SUBSCRIBER_ID and sub.VIP_STATUS=?";
 		String resultStr="";
 		Db.Rows rows = ludb("CustomerLU", i_id).fetch(sql, i_vipStatus);
-		for (Db.Row r: rows){
-			resultStr+= r.toString() ;
-		}
-		
+//		for (Db.Row r: rows){
+//			resultStr+= r.toString() ;
+//		}
+
 		return resultStr;
 	}
 
@@ -131,9 +131,44 @@ public class Logic extends WebServiceUserCode {
 	}
 
 
-
-
-
+	@webService(path = "webserviceasAsource", verb = {MethodType.GET, MethodType.POST, MethodType.PUT, MethodType.DELETE}, version = "1", isRaw = false, produce = {Produce.XML, Produce.JSON})
+	public static Object webservicAsaSource(String i_id) throws Exception {
+		log.info("RUNNING MY NEW WEB ENRICHMENT FUNCTION");
+		
+		
+		String value="select cust.FIRST_NAME||' '||cust.LAST_NAME CUSTOMER_NAME, cont.CONTRACT_ID,cont.CONTRACT_DESCRIPTION," +
+				       "sub.SUBSCRIBER_ID,sub.MSISDN,sub.IMSI,sub.SIM,sub.SUBSCRIBER_TYPE,sub.VIP_STATUS " +
+					"from PUBLIC_CUSTOMER cust, PUBLIC_CONTRACT cont, SUBSCRIBER sub where cont.CONTRACT_ID=sub.SUBSCRIBER_ID and sub.VIP_STATUS='platinum'";
+				String sqlInput = "insert into web_Servicecases (CUSTOMER_NAME,CONTRACT_ID,CONTRACT_DESCRIPTION," +
+						"SUBSCRIBER_ID,MSISDN,IMSI,SIM,SUBSCRIBER_TYPE,VIP_STATUS) " +
+						"values (?,?,?,?,?,?,?,?,?)";
+		
+		//		String sqlInput = "replace into CASES_WEBSERVICE (ID,RESULT) " +
+		//				"values (?,?)";
+		//		Db.Rows rows = fabric().fetch(value);
+		//		for(Db.Row row: rows){
+		//			results += row.toString();
+		//
+		//		}
+		//fabric().execute(sqlInput,results);
+		
+		Db.Rows rows = ludb("CustomerLU", i_id).fetch(value);
+				for(Db.Row r : rows){
+					String cast="";
+					String cust_name= cast + r.get("CUSTOMER_NAME").toString();
+					String contract_id= cast + r.get("CONTRACT_ID").toString();
+					String contract_desc= cast + r.get("CONTRACT_DESCRIPTION").toString();
+					String subs_id= cast + r.get("SUBSCRIBER_ID").toString();
+					String msisdn= cast + r.get("MSISDN").toString();
+					String imsi= cast + r.get("IMSI").toString();
+					String sim= cast + r.get("SIM").toString();
+					String sub_type= cast + r.get("SUBSCRIBER_TYPE").toString();
+					String vip_st= cast + r.get("VIP_STATUS").toString();
+		
+					fabric().execute(sqlInput,cust_name,contract_id,contract_desc,subs_id,msisdn,imsi,sim,sub_type,vip_st);
+				}
+				return  rows;
+	}
 
 	
 }
